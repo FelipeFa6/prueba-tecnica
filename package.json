@@ -1,0 +1,17 @@
+{
+  "name": "react-web",
+  "version": "1.0.0",
+  "description": "FelipeFa6's website",
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0",
+    "build": "next build"
+  },
+  "keywords": [],
+  "author": "Felipe Farias<felipe.farias.e1@gmail.com>",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "next": "^14.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
