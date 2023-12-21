@@ -1,16 +1,21 @@
-import { useState } from 'react';
-import Chevron from '../components/icons/chevron';
+import { useState, useEffect } from 'react';
+
+import Dropdown from '../components/Dropdown';
+import Table from '../components/Table';
+
+import schema from '../public/schema.json';
+
 
 const Index = () => {
-	return (
 
+	return (
         <div className="p-2 bg-success rounded bg-light"
             style={{width: '75vw', minWidth: '200px'}}>
 
             <Dropdown title='lvl1'>
             	<Dropdown title='lvl2'>
             	    <Dropdown title='lvl3'>
-					<Table />
+					    <Table />
             	    </Dropdown>
             	</Dropdown>
             </Dropdown>
@@ -26,47 +31,3 @@ const Index = () => {
 
 export default Index;
 
-const Dropdown = ({ title, children }) => {
-
-	const [ active, setActive ] = useState(false);
-
-    return (
-        <div className='w-100 ps-1 bg-light' >
-            <div className="d-flex justify-content-between align-items-center p-1 ">
-                <span>{title}</span>
-		        <div type='button' onClick={() => setActive(!active)}> 
-                    <Chevron orientation={active ? 'down' : 'up'} />
-                </div>
-            </div>
-			{ active &&
-				(
-                    <div>
-            	    { children }
-                    </div>
-				)
-			}
-        </div>
-    );
-}
-
-const Table = () => {
-	return (
-		<table className="table">
-			<thead>
-				<tr>
-					<th>ID Empresa</th>
-					<th>Nombre Empresa</th>
-					<th>Áreas</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>Hello World</td>
-					<td>RR.HH</td>
-					<td>A1</td>
-				</tr>
-			</tbody>
-		</table>
-)
-}
