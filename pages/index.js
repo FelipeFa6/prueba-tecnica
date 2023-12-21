@@ -60,7 +60,6 @@ const Index = () => {
         setData(schema.EMPRESAS);
     }, [excelData, schema]);
 
-
     return (
         <div className="p-2 bg-success rounded bg-light"
         style={{width: '75vw', minWidth: '200px'}}
