@@ -13,8 +13,8 @@ const Table = ({ workers = [] }) => (
       </tr>
     </thead>
     <tbody>
-      {workers.map((worker) => (
-        <tr key={worker.RUT_TRABAJADOR}>
+      {workers.map((worker, index) => (
+        <tr key={index}>
           <td>{worker.RUT_TRABAJADOR}</td>
           <td>{worker.NOMBRE_TRABAJADOR}</td>
           <td>{worker.EDAD}</td>

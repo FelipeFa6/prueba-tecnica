@@ -13,7 +13,7 @@ import xlsxLoader from '../utils/xlsxLoader';
 const Index = () => {
 
     const [ excelData, setExcelData ] = useState();
-	const [ data, setData ] = useState();
+    const [ data, setData ] = useState();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -33,6 +33,8 @@ const Index = () => {
             return;
         }
 
+        const accumulatedWorkers = [];
+
         excelData.forEach((worker) => {
             const { ID_EMPRESA, ID_AREA } = worker;
             const matchEmpresa = schema.EMPRESAS.find(item => item.ID_EMPRESA === ID_EMPRESA);
@@ -41,18 +43,23 @@ const Index = () => {
                 const matchArea = matchEmpresa.AREAS.find(item => item.ID_AREA === ID_AREA);
 
                 if (matchArea) {
-                    if (!matchArea.WORKERS) {
-                        matchArea.WORKERS = [];
-                    }
-
-                    if (!matchArea.WORKERS.some(existingWorker => existingWorker.ID_EMPRESA === ID_EMPRESA && existingWorker.ID_AREA === ID_AREA)) {
-                        matchArea.WORKERS.push(worker);
-                    }
+                    accumulatedWorkers.push(worker);
                 }
             }
         });
+
+        // Update the schema with the collected workers
+        schema.EMPRESAS.forEach((empresa) => {
+            empresa.AREAS.forEach((area) => {
+                area.WORKERS = accumulatedWorkers.filter(
+                    (worker) => worker.ID_EMPRESA === empresa.ID_EMPRESA && worker.ID_AREA === area.ID_AREA,
+                );
+            });
+        });
+
         setData(schema.EMPRESAS);
     }, [excelData, schema]);
+
 
     return (
         <div className="p-2 bg-success rounded bg-light"
@@ -63,9 +70,8 @@ const Index = () => {
                 <Dropdown key={index} title={empresa.NOMBRE_EMPRESA + ' ' + empresa.ID_EMPRESA}>
                 {empresa.AREAS.map((area, index) => (
                     <Dropdown key={index} title={area.NOMBRE_AREA + ' ' + area.ID_AREA}>
-                    {area.WORKERS && (
+                    {area.WORKERS.length > 0 && 
                         <Table workers={area.WORKERS}/>
-                    )
                     }
                     </Dropdown>
                 ))}

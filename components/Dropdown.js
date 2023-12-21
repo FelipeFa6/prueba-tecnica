@@ -5,7 +5,7 @@ import Chevron from './icons/chevron';
 const Dropdown = ({ title, children }) => {
 
 	const [ active, setActive ] = useState(false);
-    const hasChildren = React.Children.count(children) > 0;
+    const hasChildren = children;
 
     const handleClick = () => {
         if (hasChildren) {
