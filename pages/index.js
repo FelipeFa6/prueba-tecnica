@@ -48,7 +48,6 @@ const Index = () => {
             }
         });
 
-        // Update the schema with the collected workers
         schema.EMPRESAS.forEach((empresa) => {
             empresa.AREAS.forEach((area) => {
                 area.WORKERS = accumulatedWorkers.filter(
