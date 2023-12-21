@@ -1,5 +1,8 @@
+import React from 'react';
+
 const Table = ({ workers = [] }) => (
-  <table class="table">
+    <div className="overflow-auto">
+  <table className="table">
     <thead>
       <tr>
         <th>RUT</th>
@@ -21,6 +24,8 @@ const Table = ({ workers = [] }) => (
       ))}
     </tbody>
   </table>
+    </div>
 );
 
 export default Table;
+
