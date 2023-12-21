@@ -60,9 +60,9 @@ const Index = () => {
         >
         { data &&
             data.map((empresa, index) => (
-                <Dropdown key={index} title={empresa.NOMBRE_EMPRESA}>
+                <Dropdown key={index} title={empresa.NOMBRE_EMPRESA + ' ' + empresa.ID_EMPRESA}>
                 {empresa.AREAS.map((area, index) => (
-                    <Dropdown key={index} title={area.NOMBRE_AREA}>
+                    <Dropdown key={index} title={area.NOMBRE_AREA + ' ' + area.ID_AREA}>
                     {area.WORKERS && (
                         <Table workers={area.WORKERS}/>
                     )

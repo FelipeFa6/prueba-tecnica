@@ -22,3 +22,8 @@ code {
 table {
     width: 100%;
 }
+
+.dropdown__hover:hover {
+    transition: 0.2s;
+    background-color: #f2f2f2;
+}
