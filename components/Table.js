@@ -14,7 +14,7 @@ const Table = ({ workers = [] }) => (
     </thead>
     <tbody>
       {workers.map((worker, index) => (
-        <tr key={index}>
+        <tr key={index} style={{ whiteSpace: 'nowrap' }}>
           <td>{worker.RUT_TRABAJADOR}</td>
           <td>{worker.NOMBRE_TRABAJADOR}</td>
           <td>{worker.EDAD}</td>
