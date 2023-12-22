@@ -1,4 +1,6 @@
-Running the proyect
+hosted at: https://felipefa6.github.io/prueba-tecnica/
+
+running the proyect
 ---
 
 # SET THE `production` VARIABLE TO FALSE!!!!
@@ -7,4 +9,17 @@ $ npm install
 $ npm run dev
 
 
-hosted at: https://felipefa6.github.io/prueba-tecnica/
+EXPLANATION ON WHY 'production' SHOULD CHANGE.
+---
+
+The 'public' folder contains all the requested
+data being the excel file and the JSON file.
+While hosting the page in github pages, the URL
+changes to having the '/prueba-tecnica' path.
+
+- localhost:3000/excel.xlsx
+- github.io/prueba-tecnica/excel.xlsx
+
+so, when trying to fetch the data from
+'/excel.xlsx' the page returns a 404 error for not
+found, so it shoul be '/prueba-tecnica/excel.xlsx'
