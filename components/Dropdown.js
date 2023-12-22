@@ -28,21 +28,14 @@ const Dropdown = ({ title, children }) => {
       </div>
 
       <div
-        className="overflow-hidden"
         style={{
             display: 'grid',
             gridTemplateRows: active ? '1fr': '0fr' ,
-            overflow: 'hidden',
             transition: 'grid-template-rows 200ms'
         }}
       >
-        <div
-        style={{
-            minHeight: 0
-        }}
-      >
-        {children}
-
+        <div className="overflow-hidden" style={{ minHeight: 0 }} >
+            {children}
         </div>
       </div>
     </div>
