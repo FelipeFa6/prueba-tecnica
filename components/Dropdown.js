@@ -26,11 +26,11 @@ const Dropdown = ({ title, children }) => {
           </div>
         )}
       </div>
+
       <div
-        className={`overflow-hidden transition-max-height ${active ? 'max-height-open' : 'max-height-closed'}`}
-        style={{ maxHeight: active ? '500px' : '0px' }} // Adjust the max height as needed
+        className={`overflow-hidden max-height-transition ${active ? 'max-height-open' : 'max-height-closed' }`}
       >
-        {active && <div>{children}</div>}
+        {children}
       </div>
     </div>
   );
