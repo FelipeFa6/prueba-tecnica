@@ -14,11 +14,13 @@ import crossData from '../utils/crossData';
 const Index = () => {
     const [ data, setData ] = useState([]);
 
+    console.log();
+
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const excelData = await xlsxLoader('/prueba-tecnica/workers.xlsx');
-                setData(crossData(schema, excelData)); // setting crossedData
+                const excelData = await xlsxLoader(process.env.PUBLIC + '/workers.xlsx');
+                setData(crossData(schema, excelData));
             } catch (error) {
                 console.error('Error in fetchData:', error);
             }
