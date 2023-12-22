@@ -12,8 +12,6 @@ import xlsxLoader from '../utils/xlsxLoader';
 import crossData from '../utils/crossData';
 
 const Index = () => {
-
-    const [ excelData, setExcelData ] = useState([]);
     const [ data, setData ] = useState([]);
 
     useEffect(() => {
@@ -30,24 +28,24 @@ const Index = () => {
     }, []);
 
     return (
-        <div
-            className="p-2 bg-success rounded bg-light"
-            style={{width: '75vw', minWidth: '200px'}}
-        >
-        { data.map((empresa, index) => (
-                <Dropdown key={index} title={empresa.NOMBRE_EMPRESA + ' ' + empresa.ID_EMPRESA}>
-                {empresa.AREAS.map((area, index) => (
-                    <Dropdown key={index} title={area.NOMBRE_AREA + ' ' + area.ID_AREA}>
-                    {area.WORKERS.length > 0 && 
-                        <Table workers={area.WORKERS}/>
-                    }
-                    </Dropdown>
-                ))}
+        <div className="my-2 screen__center"
+            style={{width: '80vw'}}>
+
+        <div className="bg-light rounded p-3 ">
+
+        {data.map((empresa, index) => (
+            <Dropdown key={index} title={empresa.ID_EMPRESA + ': ' + empresa.NOMBRE_EMPRESA }>
+            {empresa.AREAS.map((area, index) => (
+                <Dropdown key={index} title={area.ID_AREA + ': ' + area.NOMBRE_AREA}>
+                {area.WORKERS.length > 0 && <Table workers={area.WORKERS} />}
                 </Dropdown>
             ))}
+            </Dropdown>
+        ))}
+        </div>
         </div>
     );
-}
+};
 
 export default Index;
 

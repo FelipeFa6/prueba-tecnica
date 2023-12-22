@@ -23,8 +23,21 @@ table {
     width: 100%;
 }
 
+/* Block: dropdown */
+.dropdown__hover {
+  transition: 0.2s;
+}
+
 .dropdown__hover:hover {
-    transition: 0.2s;
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
+}
+
+/* Block: screen */
+.screen__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 100%;
 }
 

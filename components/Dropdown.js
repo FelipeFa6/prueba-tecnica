@@ -13,13 +13,13 @@ const Dropdown = ({ title, children }) => {
   };
 
   return (
-    <div className='w-100 ps-4 pb-1'>
+    <div className='w-100 ps-3 pb-1'>
       <div
         role={`${hasChildren ? 'button' : ''}`}
         onClick={handleClick}
         className={`d-flex justify-content-between align-items-center pt-2 border-bottom ${hasChildren ? 'dropdown__hover' : ''}`}
       >
-        <span>{title}</span>
+        <span className="ps-1">{title}</span>
         {hasChildren && (
           <div>
             <Chevron size='16px' orientation={active ? 'down' : 'up'} />
