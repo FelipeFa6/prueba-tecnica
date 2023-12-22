@@ -28,21 +28,3 @@ table {
     background-color: #f2f2f2;
 }
 
-
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.max-height-transition {
-  transition: max-height 1s;
-  max-height: 500px; /* Set a large value to handle dynamic content */
-}
-
-.max-height-open {
-  max-height: 500px; /* Set the same large value as max-height-transition */
-}
-
-.max-height-closed {
-  max-height: 0;
-}
-
