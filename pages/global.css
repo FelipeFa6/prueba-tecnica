@@ -27,3 +27,15 @@ table {
     transition: 0.2s;
     background-color: #f2f2f2;
 }
+.transition-max-height {
+  transition: max-height 0.3s ease-in-out;
+}
+
+.max-height-open {
+  max-height: 500px; /* Adjust as needed */
+}
+
+.max-height-closed {
+  max-height: 0;
+}
+
