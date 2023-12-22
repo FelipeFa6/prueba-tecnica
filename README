@@ -1,14 +1,10 @@
 Running the proyect
 ---
 
+# SET THE `production` VARIABLE TO FALSE!!!!
+
 $ npm install
 $ npm run dev
 
-I tried deploying the proyect to Github Pages but
-because of the url path the public folder was hard
-to access while developing and while on
-"production".
 
-- localhost:3000/
-- felipefa6.github.io/prueba-tecnica/
-
+hosted at: https://felipefa6.github.io/prueba-tecnica/
