@@ -11,7 +11,7 @@ const xlsxLoader = async (filePath) => {
 		const data = utils.sheet_to_json(ws);
 		return data;
 	} catch (error) {
-		console.error('Error fetching or processing data:', error);
+		console.error('Error on xlsx, fetching or processing data:', error);
 		throw error;
 	}
 };
