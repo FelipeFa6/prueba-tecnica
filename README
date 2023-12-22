@@ -14,8 +14,8 @@ EXPLANATION ON WHY 'production' SHOULD CHANGE.
 
 The 'public' folder contains all the requested
 data being the excel file and the JSON file.
-While hosting the page in github pages, the URL
-changes to having the '/prueba-tecnica' path.
+While hosting the page in github pages, the root
+URL changes the path to '/prueba-tecnica'.
 
 - localhost:3000/excel.xlsx
 - github.io/prueba-tecnica/excel.xlsx
