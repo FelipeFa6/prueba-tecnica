@@ -17,7 +17,7 @@ const Index = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const excelData = await xlsxLoader('/workers.xlsx');
+                const excelData = await xlsxLoader('/prueba-tecnica/workers.xlsx');
                 setData(crossData(schema, excelData)); // setting crossedData
             } catch (error) {
                 console.error('Error in fetchData:', error);
